@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+#
+# To run this, you'll need to install the Image::PNG::QRCode package from CPAN
+#
+
+use strict;
+use warnings;
+use Image::PNG::QRCode 'qrpng';
+
+my $str     = "WIFI:S:MySSID;T:WPA;P:some_goofy_password;;";
+my $outfile = "wifi.png";
+
+qrpng( text => $str, out => $outfile );
+
+print("\nQRCode has been generated, it's in $outfile\n\n");
